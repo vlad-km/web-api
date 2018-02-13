@@ -1,4 +1,4 @@
-# Mutation-observable interface for Morem environment
+# Mutation-observable interface for Moren environment
 
 ## API
 
