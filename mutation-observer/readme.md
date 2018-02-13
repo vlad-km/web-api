@@ -41,8 +41,7 @@ Keys:
    :char t/nil    "characterData" if it was a mutation to a CharacterData node,
    :child t/nil   "childList" if it was a mutation to the tree of nodes.
 
-See ![ref-mutation-init](https://developer.mozilla.org/ru/docs/Web/API/MutationObserver#MutationObserverInit)
-for details.
+See [mutation-init] for details.
 
 
 
@@ -75,3 +74,6 @@ Copyright © 2018 Vladimir Mezentsev
 
 ## License
 GNU General Public License v3.0
+
+
+[mutation-init]: <https://developer.mozilla.org/ru/docs/Web/API/MutationObserver#MutationObserverInit>
