@@ -50,7 +50,7 @@
         (values)  ))
 
 
-(test-1 10)
+(test1 10)
 
 
 ;;; EOF
