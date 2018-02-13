@@ -4,6 +4,7 @@
 (defparameter *mutant (html:div))
 (defparameter *mutant-child (html:div))
 (defparameter *datareg (#j:document:createTextNode ""))
+
 (defparameter *ensign-fn
   (lambda (mutation)
       (let ((type)
