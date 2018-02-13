@@ -32,7 +32,9 @@
 ```
 
 
-### (observe inst obj &key (char t) attr child) - Registers the MutationObserver instance to receive notifications
+### (mutation:observe inst obj &key (char t) attr child) 
+
+Registers the MutationObserver instance to receive notifications
 
 ```
 (defvar *regdata (dom:createTextNode ""))
@@ -42,14 +44,22 @@
 ```
 
 
-### (disconnect mutation-observer-instance) - Stops the MutationObserver instance from receiving notifications
+### (mutation:disconnect mutation-observer-instance) 
+
+Stops the MutationObserver instance from receiving notifications
 
 ```
 (mutation:disconnect *mutant)
+```
 
+### (mutation:take-records mutation-obrserver-intsnce)
 
+Empties the MutationObserver instance's record queue and returns what was in there
 
 ```
+(mutation:take-records *eisign)
+```
+
 
 
 # Copyright
