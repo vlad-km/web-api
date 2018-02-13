@@ -2,7 +2,8 @@
 
 ## API
 
-### (mutation:new-observer fun) - Constructor for instantiating new DOM mutation observers
+### (mutation:new-observer fun) 
+Constructor for instantiating new DOM mutation observers
 
 ```
 (defparameter *ensign-fn
@@ -33,8 +34,17 @@
 
 
 ### (mutation:observe inst obj &key (char t) attr child) 
-
 Registers the MutationObserver instance to receive notifications
+
+Keys:
+   :attr t/nil    "attributes" if the mutation was an attribute mutation,
+   :char t/nil    "characterData" if it was a mutation to a CharacterData node,
+   :child t/nil   "childList" if it was a mutation to the tree of nodes.
+
+See ![ref-mutation-init](https://developer.mozilla.org/ru/docs/Web/API/MutationObserver#MutationObserverInit)
+for details.
+
+
 
 ```
 (defvar *regdata (dom:createTextNode ""))
@@ -45,15 +55,13 @@ Registers the MutationObserver instance to receive notifications
 
 
 ### (mutation:disconnect mutation-observer-instance) 
-
 Stops the MutationObserver instance from receiving notifications
 
 ```
 (mutation:disconnect *mutant)
 ```
 
-### (mutation:take-records mutation-obrserver-intsnce)
-
+### (mutation:take-records mutation-obrserver-instance)
 Empties the MutationObserver instance's record queue and returns what was in there
 
 ```
