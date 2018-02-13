@@ -2,9 +2,8 @@
 
 ## API
 
-### Namespace mutation
+### (mutation:new-observer fun) - Constructor for instantiating new DOM mutation observers
 
-(mutation:new-observer fun) - Constructor for instantiating new DOM mutation observers
 ```
 (defparameter *ensign-fn
   (lambda (mutation)
@@ -26,23 +25,29 @@
                                                        (dom:get-attribute target (oget (aref mutation idx) "attributeName"))))
                     ((equal type "childList") (format t "childs~%"))
                     (t (error "wtf mutation type ~a?" type)))))))
+
+
+(defparameter *eisign (mutation:new-observer *eisign-fn))
+
 ```
 
 
-(observe inst obj &key (char t) attr child) - Registers the MutationObserver instance to receive notifications
+### (observe inst obj &key (char t) attr child) - Registers the MutationObserver instance to receive notifications
 
 ```
 (defvar *regdata (dom:createTextNode ""))
 (defvar *other-node (dom:div)) 
-(mutation:observe *eisign-fn *regdata)
-(mutation:observe *eisign-fn *other-node :attr t :child t)
+(mutation:observe *eisign *regdata)
+(mutation:observe *eisign *other-node :attr t :child t)
 ```
 
 
-(disconnect mutation-observer-instance) - Stops the MutationObserver instance from receiving notifications
+### (disconnect mutation-observer-instance) - Stops the MutationObserver instance from receiving notifications
 
 ```
 (mutation:disconnect *mutant)
+
+
 
 ```
 
