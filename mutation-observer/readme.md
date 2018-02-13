@@ -20,11 +20,14 @@ Constructor for instantiating new DOM mutation observers
               (setq type (oget (aref mutation idx) "type"))
               (setq target (oget (aref mutation idx) "target"))
               (format t "Mutation #~a type ~a ~%" idx type)
-              (cond ((equal type "characterData") (format t "Data ~a~%" (oget target "data")))
-                    ((equal type "attributes") (format t "Attribute ~a ~a~%"
-                                                       (oget (aref mutation idx) "attributeName")
-                                                       (dom:get-attribute target (oget (aref mutation idx) "attributeName"))))
-                    ((equal type "childList") (format t "childs~%"))
+              (cond ((equal type "characterData") 
+                     (format t "Data ~a~%" (oget target "data")))
+                    ((equal type "attributes") 
+                     (format t "Attribute ~a ~a~%"
+                                 (oget (aref mutation idx) "attributeName")
+                                 (dom:get-attribute target (oget (aref mutation idx) "attributeName"))))
+                    ((equal type "childList") 
+                     (format t "childs~%"))
                     (t (error "wtf mutation type ~a?" type)))))))
 
 
@@ -46,7 +49,7 @@ Keys:
 See [mutation-init] for details.
 
 
-```
+```lisp
 (defvar *regdata (dom:createTextNode ""))
 (defvar *other-node (dom:div)) 
 (mutation:observe *eisign *regdata)
@@ -57,14 +60,14 @@ See [mutation-init] for details.
 ### (mutation:disconnect mutation-observer-instance) 
 Stops the MutationObserver instance from receiving notifications
 
-```
+```lisp
 (mutation:disconnect *mutant)
 ```
 
 ### (mutation:take-records mutation-obrserver-instance)
 Empties the MutationObserver instance's record queue and returns what was in there
 
-```
+```lisp
 (mutation:take-records *eisign)
 ```
 
