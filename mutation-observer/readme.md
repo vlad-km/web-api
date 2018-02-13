@@ -41,9 +41,9 @@ Registers the MutationObserver instance to receive notifications
 
 Keys:
 ```
-   :attr t/nil    "attributes" if the mutation was an attribute mutation,
-   :char t/nil    "characterData" if it was a mutation to a CharacterData node,
-   :child t/nil   "childList" if it was a mutation to the tree of nodes.
+   :attr t/nil    "attributes" if the mutation was an attribute mutation
+   :char t/nil    "characterData" if it was a mutation to a CharacterData node
+   :child t/nil   "childList" if it was a mutation to the tree of nodes
 ```
 
 See [mutation-init] for details.
