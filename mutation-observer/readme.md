@@ -61,7 +61,7 @@ See [mutation-init] for details.
 Stops the MutationObserver instance from receiving notifications
 
 ```lisp
-(mutation:disconnect *mutant)
+(mutation:disconnect *eisign)
 ```
 
 ### (mutation:take-records mutation-obrserver-instance)
