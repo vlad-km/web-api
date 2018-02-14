@@ -30,7 +30,7 @@
                     (t (error "wtf mutation type ~a?" type)))))))
 
 
-(defparameter *ensign (mutation:observe (mutation:new-observer *ensign-fn)))
+(defparameter *ensign (mutation:new-observer *ensign-fn))
 
 
 (mutation:observe *ensign *datareg)
